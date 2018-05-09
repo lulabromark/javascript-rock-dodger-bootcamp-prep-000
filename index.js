@@ -93,8 +93,9 @@ function createRock(x) {
      */
 
     rock.style.top = `${top += 2}px`
-
-      if (top < 380) {
+    if (checkCollision === true) {
+      endGame
+    } else if (top < 380) {
         window.requestAnimationFrame(moveRock)
       } else {
        GAME.removeChild(rock)
