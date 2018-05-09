@@ -41,15 +41,15 @@ function checkCollision(rock) {
       (rockLeftEdge >= dodgerLeftEdge && rockRightEdge <= dodgerRightEdge) ||
       (rockLeftEdge <= dodgerRightEdge && rockRightEdge >= dodgerRightEdge)) {
       /**
-               * Think about it -- what's happening here?
-               * There's been a collision if one of three things is true:
-               * 1. The rock's left edge is < the DODGER's left edge,
-               *    and the rock's right edge is > the DODGER's left edge;
-               * 2. The rock's left edge is > the DODGER's left edge,
-               *    and the rock's right edge is < the DODGER's right edge;
-               * 3. The rock's left edge is < the DODGER's right edge,
-               *    and the rock's right edge is > the DODGER's right edge
-         */
+       * Think about it -- what's happening here?
+       * There's been a collision if one of three things is true:
+       * 1. The rock's left edge is < the DODGER's left edge,
+       *    and the rock's right edge is > the DODGER's left edge;
+       * 2. The rock's left edge is > the DODGER's left edge,
+       *    and the rock's right edge is < the DODGER's right edge;
+       * 3. The rock's left edge is < the DODGER's right edge,
+       *    and the rock's right edge is > the DODGER's right edge
+       */
       return true
     }
   }
@@ -66,7 +66,7 @@ function createRock(x) {
    * Now that we have a rock, we'll need to append
    * it to GAME and move it downwards.
    */
-   GAME.appendChild(rock)
+  GAME.appendChild(rock)
   /**
    * This function moves the rock. (2 pixels at a time
    * seems like a good pace.)
@@ -93,10 +93,10 @@ function createRock(x) {
     if (checkCollision(rock)) {
       endGame()
     } else if (top < 380) {
-        window.requestAnimationFrame(moveRock)
-      } else {
-       GAME.removeChild(rock)
-     }
+      window.requestAnimationFrame(moveRock)
+    } else {
+      GAME.removeChild(rock)
+    }
   }
   // We should kick of the animation of the rock around here
   window.requestAnimationFrame(moveRock)
@@ -171,6 +171,6 @@ function start() {
   START.style.display = 'none'
 
   gameInterval = setInterval(function() {
-    createRock(Math.floor(Math.random() *  (GAME_WIDTH - 20)))
+    createRock(Math.floor(Math.random() * (GAME_WIDTH - 20)))
   }, 1000)
 }
