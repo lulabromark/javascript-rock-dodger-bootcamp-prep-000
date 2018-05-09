@@ -114,6 +114,7 @@ function createRock(x) {
  * and removing the `moveDodger` event listener.
  * Finally, alert "YOU LOSE!" to the player.
  */
+
 function endGame() {
   clearInterval(gameInterval);
   for (let i = 0; i < ROCKS.length; i++) {
@@ -135,55 +136,55 @@ function moveDodger(e) {
   }
 }
 
+// function moveDodgerLeft() {
+//   var leftNumbers = DODGER.style.left.replace('px', '')
+//   var left = parseInt(leftNumbers, 10)
+//   window.requestAnimationFrame(function() {
+//
+//     if (left > 0) {
+//       DODGER.style.left = `${left - 4}px`
+//     }
+//   })
+// }
+//
+// function moveDodgerRight() {
+//   var leftNumbers = DODGER.style.left.replace('px', '')
+//   var left = parseInt(leftNumbers, 10)
+//   window.requestAnimationFrame(function() {
+//
+//     if (left < 360) {
+//       DODGER.style.left = `${left + 4}px`
+//     }
+//   })
+// }
+
 function moveDodgerLeft() {
-  var leftNumbers = DODGER.style.left.replace('px', '')
+  var leftNumbers = dodger.style.left.replace('px', '')
   var left = parseInt(leftNumbers, 10)
-  window.requestAnimationFrame(function() {
+
+  function step() {
+    dodger.style.left = `${left - 4}px`
 
     if (left > 0) {
-      DODGER.style.left = `${left - 4}px`
+      window.requestAnimationFrame(step)
     }
-  })
+  }
+  window.requestAnimationFrame(step)
 }
 
 function moveDodgerRight() {
-  var leftNumbers = DODGER.style.left.replace('px', '')
-  var left = parseInt(leftNumbers, 10)
-  window.requestAnimationFrame(function() {
+   var leftNumbers = dodger.style.left.replace('px', '')
+   var left = parseInt(leftNumbers, 10)
 
-    if (left < 360) {
-      DODGER.style.left = `${left + 4}px`
-    }
-  })
+   function step() {
+     dodger.style.left = `${left + 4}px`
+
+     if (left < 360) {
+       window.requestAnimationFrame(step)
+     }
+   }
+   window.requestAnimationFrame(step)
 }
-
-// function moveDodgerLeft() {
-//   var leftNumbers = dodger.style.left.replace('px', '')
-//   var left = parseInt(leftNumbers, 10)
-//
-//   function step() {
-//     dodger.style.left = `${left - 4}px`
-//
-//     if (left > 0) {
-//       window.requestAnimationFrame(step)
-//     }
-//   }
-//   window.requestAnimationFrame(step)
-// }
-
-// function moveDodgerRight() {
-//    var leftNumbers = dodger.style.left.replace('px', '')
-//    var left = parseInt(leftNumbers, 10)
-//
-//    function step() {
-//      dodger.style.left = `${left + 4}px`
-//
-//      if (left < 360) {
-//        window.requestAnimationFrame(step)
-//      }
-//    }
-//    window.requestAnimationFrame(step)
-// }
 
 /**
  * @param {string} p The position property
