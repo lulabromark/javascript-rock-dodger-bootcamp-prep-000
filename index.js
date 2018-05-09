@@ -50,8 +50,6 @@ function checkCollision(rock) {
                * 3. The rock's left edge is < the DODGER's right edge,
                *    and the rock's right edge is > the DODGER's right edge
          */
-
-
       return true
     }
   }
@@ -80,6 +78,9 @@ function createRock(x) {
      * If a rock collides with the DODGER,
      * we should call endGame()
      */
+     if (checkCollision === true) {
+       endGame
+     }
 
     /**
      * Otherwise, if the rock hasn't reached the bottom of
