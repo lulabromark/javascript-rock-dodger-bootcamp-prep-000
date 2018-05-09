@@ -120,6 +120,7 @@ function endGame() {
     ROCKS[i].remove()
   }
   window.removeEventListener('keydown', moveDodger)
+  alert('YOU LOSE!')
 }
 
 function moveDodger(e) {
