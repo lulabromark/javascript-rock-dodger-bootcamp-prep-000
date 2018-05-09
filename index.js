@@ -79,7 +79,6 @@ function createRock(x) {
      * we should call endGame()
      */
 
-
     /**
      * Otherwise, if the rock hasn't reached the bottom of
      * the GAME, we want to move it again.
@@ -105,7 +104,6 @@ function createRock(x) {
   // when there's a collision
   ROCKS.push(rock)
 
-
   // Finally, return the rock element you've created
   return rock
 }
@@ -117,6 +115,9 @@ function createRock(x) {
  * Finally, alert "YOU LOSE!" to the player.
  */
 function endGame() {
+  clearInterval(gameInterval)
+  GAME.removeChild(ROCKS)
+  
 }
 
 function moveDodger(e) {
