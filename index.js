@@ -157,34 +157,6 @@ function moveDodgerRight() {
   })
 }
 
-// function moveDodgerLeft() {
-//   var leftNumbers = dodger.style.left.replace('px', '')
-//   var left = parseInt(leftNumbers, 10)
-//
-//   function step() {
-//     dodger.style.left = `${left - 4}px`
-//
-//     if (left > 0) {
-//       window.requestAnimationFrame(step)
-//     }
-//   }
-//   window.requestAnimationFrame(step)
-// }
-
-// function moveDodgerRight() {
-//    var leftNumbers = dodger.style.left.replace('px', '')
-//    var left = parseInt(leftNumbers, 10)
-//
-//    function step() {
-//      dodger.style.left = `${left + 4}px`
-//
-//      if (left < 360) {
-//        window.requestAnimationFrame(step)
-//      }
-//    }
-//    window.requestAnimationFrame(step)
-// }
-
 /**
  * @param {string} p The position property
  * @returns {number} The position as an integer (without 'px')
