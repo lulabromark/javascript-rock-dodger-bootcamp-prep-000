@@ -114,7 +114,6 @@ function endGame() {
 }
 
 function moveDodger(e) {
-  document.addEventListener('keydown', function(e) {
     if (e.which === LEFT_ARROW) {
       moveDodgerLeft()
     } else if (e.which === RIGHT_ARROW) {
@@ -122,7 +121,6 @@ function moveDodger(e) {
       e.preventDefault();
       moveDodgerRight()
     }
-  })
 }
 
 function moveDodgerLeft() {
